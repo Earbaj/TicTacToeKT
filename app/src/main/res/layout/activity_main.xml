@@ -15,17 +15,20 @@
         <Button
             android:id="@+id/btn1"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
 
         <Button
             android:id="@+id/btn2"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
 
         <Button
             android:id="@+id/btn3"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
     </TableRow>
 
     <TableRow
@@ -36,17 +39,20 @@
         <Button
             android:id="@+id/btn4"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
 
         <Button
             android:id="@+id/btn5"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
 
         <Button
             android:id="@+id/btn6"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
     </TableRow>
 
     <TableRow
@@ -57,16 +63,19 @@
         <Button
             android:id="@+id/btn7"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
 
         <Button
             android:id="@+id/btn8"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
 
         <Button
             android:id="@+id/btn9"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="btnclick"/>
     </TableRow>
 </TableLayout>
