@@ -9,6 +9,7 @@
     tools:viewBindingIgnore="false">
 
     <TableRow
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
@@ -20,6 +21,7 @@
             android:onClick="btnclick"/>
 
         <Button
+            android:layout_margin="5dp"
             android:id="@+id/btn2"
             android:layout_width="40pt"
             android:layout_height="40pt"
@@ -44,6 +46,7 @@
             android:onClick="btnclick"/>
 
         <Button
+            android:layout_margin="5dp"
             android:id="@+id/btn5"
             android:layout_width="40pt"
             android:layout_height="40pt"
@@ -57,6 +60,7 @@
     </TableRow>
 
     <TableRow
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
@@ -68,6 +72,7 @@
             android:onClick="btnclick"/>
 
         <Button
+            android:layout_margin="5dp"
             android:id="@+id/btn8"
             android:layout_width="40pt"
             android:layout_height="40pt"

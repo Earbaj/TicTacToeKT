@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -24,6 +26,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.mnReset -> restartGame()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     //Healper function for all click
@@ -197,7 +211,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             buSelected!!.text = ""
-            //buSelected!!.setBackgroundResource(R.color.purple_200)
+            buSelected!!.setBackgroundResource(R.color.btnColor)
             buSelected!!.isEnabled = true
         }
 
