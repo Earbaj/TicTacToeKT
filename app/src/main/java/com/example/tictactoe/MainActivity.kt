@@ -1,12 +1,15 @@
 package com.example.tictactoe
 
 import android.annotation.SuppressLint
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     var player2 = ArrayList<Int>()
     var player1WinsCounts = 0
     var player2WinsCounts = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             btnselected.setBackgroundResource(R.color.blue)
             player1.add(cellId)
             activePlayer = 2
+            autoPlay()
         }else{
             btnselected.text = "O"
             btnselected.setBackgroundResource(R.color.orange)
@@ -121,11 +126,82 @@ class MainActivity : AppCompatActivity() {
         if (winer == 1) {
             player1WinsCounts += 1
             Toast.makeText(this, "Player 1 win the game", Toast.LENGTH_LONG).show()
+            restartGame()
 
         } else if (winer == 2) {
             player2WinsCounts += 1
             Toast.makeText(this, "Player 2 win the game", Toast.LENGTH_LONG).show()
+            restartGame()
         }
+
+    }
+    fun autoPlay(){
+
+
+        var emptyCells = ArrayList<Int>()
+
+        for( cellId in 1..9){
+
+            if( !(player1.contains(cellId) || player2.contains(cellId))){
+                emptyCells.add(cellId)
+            }
+        }
+
+
+
+        if(emptyCells.size==0){
+            restartGame()
+        }
+
+
+        val r = Random()
+        val randIndex = r.nextInt(emptyCells.size )
+        val cellId = emptyCells[randIndex]
+
+        var buSelected:Button
+        buSelected =  when(cellId){
+            1-> btn1
+            2-> btn2
+            3-> btn3
+            4-> btn4
+            5-> btn5
+            6-> btn6
+            7-> btn7
+            8-> btn8
+            9-> btn9
+            else ->{ btn1}
+
+        }
+        playGame(cellId, buSelected)
+    }
+
+    fun restartGame(){
+
+        activePlayer = 1
+        player1.clear()
+        player2.clear()
+
+        for(cellId in 1..9){
+
+            var buSelected:Button? = when(cellId){
+                1-> btn1
+                2-> btn2
+                3-> btn3
+                4-> btn4
+                5-> btn5
+                6-> btn6
+                7-> btn7
+                8-> btn8
+                9-> btn9
+                else ->{ btn1}
+
+            }
+            buSelected!!.text = ""
+            //buSelected!!.setBackgroundResource(R.color.purple_200)
+            buSelected!!.isEnabled = true
+        }
+
+        Toast.makeText(this,"Player1: $player1WinsCounts, Player2: $player2WinsCounts", Toast.LENGTH_LONG).show()
 
 
     }
